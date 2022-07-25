@@ -1,5 +1,5 @@
 <template>
-<div class="w-full cursor-pointer no-break-inside p-2 mb-6 border-2 border-gray-100 rounded-md shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
+<div @click="$emit('afterClick', product)" class="w-full cursor-pointer no-break-inside p-2 mb-6 border-2 border-gray-100 rounded-md shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
   <img class="w-full h-auto" :src="product.images[0]" :alt="product" />
   <div class="mt-2 text-sm">{{ product.name }}</div>
   <div class="font-semibold">{{ formatRupiah(product.price) }}</div>
@@ -15,7 +15,7 @@
 import { StarIcon } from "@vue-hero-icons/solid"
 
 export default {
-	props: ['product'],
+	props: ['product', 'click'],
   components: {
     StarIcon
   },

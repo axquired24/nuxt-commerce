@@ -47,6 +47,11 @@ export default {
     ],
   },
 
+  loading: {
+    color: '#047857',
+    height: '3px'
+  },
+
   server: {
     port: 3003
   }

@@ -17,7 +17,7 @@
     <!-- <div class="column-3 gap-6 mt-5"> -->
     <div class="grid grid-cols-4 gap-6 mt-5">
       <template v-for="(product, productIdx) in products">
-        <CardProductItem :key="productIdx" :product="product" />
+        <CardProductItem :key="productIdx" :product="product" @afterClick="gotoDetail" />
       </template>
     </div>
     <div class="my-10 flex justify-center">
@@ -28,6 +28,9 @@
 
 <script>
 import Helper from '@/helpers/Helper.js'
+import { mapGetters, mapMutations } from 'vuex'
+
+const slug = require('slug')
 export default {
   layout: 'toko-sidia',
   data() {
@@ -43,24 +46,39 @@ export default {
       products: []
     }
   },
+  loading: true,
   methods: {
+    ...mapMutations({
+      setSingleProduct: 'product/set_single',
+    }),
+
     async fetchProducts() {
       let products = []
       try {
         const response = await fetch('https://run.mocky.io/v3/a0629060-84ec-482f-830e-38531e822155')
         products = await response.json()
-        console.log({ajProd: products})
       } catch (e) {
         console.error('Failed to fetch product list', e)
-      }
+      } // end try
       return products
+    },
+
+    gotoDetail(product) {
+      this.setSingleProduct(product)
+      this.$router.push({
+        path: '/product/' + slug(product.name),
+      })
+      console.log({product})
     }
   },
   mounted() {
     const self = this
-    this.fetchProducts().then(products => {
-      console.log({products})
-      self.products = products
+    this.$nextTick(() => {
+      self.$nuxt.$loading.start()
+      self.fetchProducts().then(products => {
+        self.products = products
+        self.$nuxt.$loading.finish()
+      })
     })
 
     // Generate Static Products
