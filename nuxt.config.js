@@ -45,6 +45,13 @@ export default {
     transpile: [
       'nanoid'
     ],
+    postcss: {
+      plugins: {
+        'postcss-import': true,
+        'tailwindcss/nesting': {},
+        'postcss-nested': {}
+      }
+    }
   },
 
   loading: {

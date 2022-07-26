@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-12 gap-4 px-10 py-6 shadow-md items-center">
-    <div class="text-xl font-bold text-green-700">Tokosidia</div>
+    <NuxtLink to="/" class="text-xl font-bold text-green-700">Tokosidia</NuxtLink>
     <div class="col-span-9 flex items-center gap-4">
       <div class="relative w-full">
         <input class="w-full px-3 py-2 border-2 border-gray-200 text-sm text-gray-700 focus:ring-2 focus:ring-green-300 focus:outline-none rounded-md" type="text" placeholder="Cari">
