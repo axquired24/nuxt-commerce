@@ -132,7 +132,7 @@ export default {
   },
   data() {
     return {
-      product: null,
+      product: Helper.generateProduct({imagesParam:[]}),
       selectedVariant: null,
       selectedSize: null,
       qty: 1,
@@ -223,7 +223,7 @@ export default {
         return product
       }
   },
-  created() {
+  mounted() {
     // this.product = this.getSingleProduct()
     this.product = this.getProductById()
   }
