@@ -1,12 +1,12 @@
 # Commerce Website using Nuxt.js & Tailwind CSS
 
 ## Live Preview - SPA Mode
-[https://62e0577f9acb0d0ab95d29e7--phenomenal-marshmallow-417075.netlify.app/spa](https://62e0577f9acb0d0ab95d29e7--phenomenal-marshmallow-417075.netlify.app/spa)
+[https://phenomenal-marshmallow-417075.netlify.app/spa/](https://phenomenal-marshmallow-417075.netlify.app/spa/)
 
 ### Live Preview - SSR Mode
 Not Recommended because this preview deploy using nuxt-generate
 Difference only on detail page, when you reload it cannot show blank page ($route.params issue)
-[https://62e0577f9acb0d0ab95d29e7--phenomenal-marshmallow-417075.netlify.app](https://62e0577f9acb0d0ab95d29e7--phenomenal-marshmallow-417075.netlify.app)
+[https://phenomenal-marshmallow-417075.netlify.app/](https://phenomenal-marshmallow-417075.netlify.app/)
 
 ## Feature 
 - [x] Product Listing
