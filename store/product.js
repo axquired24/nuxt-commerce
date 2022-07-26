@@ -19,7 +19,6 @@ export const getters = {
   get_collection(state) {
     if(state.collection.length < 1) {
       const collectionStorage = collectionProductStorage.getLatestValue()
-      console.log(state.collection, {collectionStorage})
       return collectionStorage
     } // endif
     return state.collection;

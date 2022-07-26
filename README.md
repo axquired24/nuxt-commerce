@@ -16,9 +16,9 @@ Difference only on detail page, when you reload it cannot show blank page ($rout
 - [x] Using Vuex to store fetched products (State management)
 - [x] Using persisted-vuex to keep data on localstorage (handle refresh with blank error)
 - [x] Manually created persisted data on localstorage (other plugin is expired maintained more than 1 year ago)
-- [ ] On Detail Page, now you can only refresh in SSR mode, in SPA mode it will show blank (the preview link is SPA mode, for SSR mode you can using npm run dev or run as production below)
 - [x] Dummy data generator function `helpers/Helper.js`
 - [x] Non-dummy rating product feature
+- [x] Build mode: SSR and SPA (different routes)
 
 ## Running in Local Laptop
 

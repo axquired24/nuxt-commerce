@@ -61,7 +61,7 @@ export default {
     async fetchProducts() {
       let products = []
       try {
-        const response = await fetch('https://run.mocky.io/v3/f576c02d-4ca2-43f6-a8e1-274f4489c8b7')
+        const response = await fetch('https://run.mocky.io/v3/2adaafe4-548a-4529-9ceb-139bbc0a14ef')
         products = await response.json()
       } catch (e) {
         console.error('Failed to fetch product list', e)
