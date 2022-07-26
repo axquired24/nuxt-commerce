@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MainNavbar homepage='/' />
+    <MainNavbar homepage='/spa' />
     <Nuxt />
     <MainFooter />
   </div>
@@ -9,7 +9,7 @@
 <script>
 export default {
   head: {
-    title: 'TokoSidia | SSR Mode',
+    title: 'TokoSidia | SPA Mode',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
