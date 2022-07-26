@@ -1,29 +1,31 @@
 <template>
-  <div class="py-5 px-32 w-full">
+  <div class="py-5 lg:px-32 w-full">
     <!-- Banner Section -->
     <MainTopBanner />
 
-    <!-- Categories -->
-    <div class="flex gap-4 mt-5">
-      <template v-for="(cat, catIdx) in categories">
-        <BtnShopCategory :label="cat" :key="catIdx" />
-      </template>
-    </div>
-
-    <!-- Products -->
-    <template v-if="products.length < 1">
-      <div class="flex justify-center my-5">
-        <img src="/loading-green.gif" alt="Loading">
+    <div class="px-4 lg:px-0">
+      <!-- Categories -->
+      <div class="flex gap-4 my-5 overflow-x-scroll">
+        <template v-for="(cat, catIdx) in categories">
+          <BtnShopCategory :label="cat" :key="catIdx" />
+        </template>
       </div>
-    </template>
-    <!-- <div class="column-3 gap-6 mt-5"> -->
-    <div class="grid grid-cols-4 gap-6 mt-5">
-      <template v-for="(product, productIdx) in products">
-        <CardProductItem :key="productIdx" :product="product" @afterClick="gotoDetail" />
+
+      <!-- Products -->
+      <template v-if="products.length < 1">
+        <div class="flex justify-center my-5">
+          <img src="/loading-green.gif" alt="Loading">
+        </div>
       </template>
-    </div>
-    <div class="my-10 flex justify-center">
-      <button class="px-4 py-2 text-gray-600 border-2 border-gray-500 rounded-md cursor-pointer hover:bg-gray-100">Lihat Selebihnya</button>
+      <!-- <div class="column-3 gap-6 mt-5"> -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-6 lg:mt-5">
+        <template v-for="(product, productIdx) in products">
+          <CardProductItem :key="productIdx" :product="product" @afterClick="gotoDetail" />
+        </template>
+      </div>
+      <div class="my-10 flex justify-center">
+        <button class="px-4 py-2 text-gray-600 border-2 border-gray-500 rounded-md cursor-pointer hover:bg-gray-100">Lihat Selebihnya</button>
+      </div>
     </div>
   </div>
 </template>

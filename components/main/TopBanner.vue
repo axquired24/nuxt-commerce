@@ -10,7 +10,7 @@
       </ul>
     </div>
 
-    <div data-glide-el="controls">
+    <div class="hidden lg:block" data-glide-el="controls">
       <button class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--prev -left-4 bg-white" data-glide-dir="<">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
           <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
@@ -50,10 +50,11 @@ export default {
         autoplay: 4000,
         hoverpause: false,
         breakpoints: {
-          600: {
+          800: {
+            perView: 1,
             peek: {
-              before: 100,
-              after: 100
+              before: 20,
+              after: 20
             }
           }
         }

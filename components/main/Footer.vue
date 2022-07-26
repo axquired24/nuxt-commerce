@@ -1,5 +1,5 @@
 <template>
-<div class="p-10 bg-green-500 grid grid-cols-4 text-green-800">
+<div class="p-10 bg-green-500 grid grid-cols-2 lg:grid-cols-4 text-green-800">
   <div class="flex flex-col gap-2 text-sm">
     <div class="text-xl font-semibold">
       Tokosidia
@@ -20,7 +20,7 @@
       </NuxtLink>
     </template>
   </div>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 mt-10 lg:mt-0">
     <div class="text-xl font-semibold">
       Ikuti Kami
     </div>
