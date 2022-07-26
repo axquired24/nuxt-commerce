@@ -54,6 +54,7 @@ export default {
   methods: {
     ...mapMutations({
       setSingleProduct: 'product/set_single',
+      setCollectionProduct: 'product/set_collection'
     }),
 
     async fetchProducts() {
@@ -64,6 +65,7 @@ export default {
       } catch (e) {
         console.error('Failed to fetch product list', e)
       } // end try
+      this.setCollectionProduct(products)
       return products
     },
 

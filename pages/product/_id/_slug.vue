@@ -194,6 +194,7 @@ export default {
   methods: {
       ...mapGetters({
         getSingleProduct: 'product/get_single',
+        getCollectionProduct: 'product/get_collection',
       }),
       formatRupiah(angka=0, prefix='Rp ') {
         return Helper.formatRupiah(angka, prefix)
@@ -213,10 +214,18 @@ export default {
         } else if(this.qty > 1) {
           this.qty--
         } // endif
+      },
+      getProductById() {
+        let product = null
+        const productId = this.$route.params.id
+        const productCollection = this.getCollectionProduct()
+        product = productCollection.find(p => p.id == productId)
+        return product
       }
   },
   created() {
-    this.product = this.getSingleProduct()
+    // this.product = this.getSingleProduct()
+    this.product = this.getProductById()
   }
 }
 </script>
