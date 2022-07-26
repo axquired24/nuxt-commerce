@@ -144,8 +144,10 @@ export default {
       variants: [
         {name: 'gray', color: 'text-gray-200'},
         {name: 'green', color: 'text-green-600'},
-        {name: 'yellow', color: 'text-yellow-700'},
-        {name: 'red', color: 'text-red-500'},
+        {name: 'yellow', color: 'text-yellow-500'},
+        {name: 'red', color: 'text-red-600'},
+        {name: 'blue', color: 'text-blue-600'},
+        {name: 'black', color: 'text-gray-900'}
       ],
       sizes: [
         's','m','l','xl','xxl'
