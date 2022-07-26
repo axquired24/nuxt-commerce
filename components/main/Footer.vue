@@ -28,10 +28,10 @@
       <a href="https://facebook.com" target="_blank">
         <IconFacebook class="text-green-800 hover:text-green-700 h-8" />
       </a>
-      <a href="https://facebook.com" target="_blank">
+      <a href="https://instagram.com" target="_blank">
         <IconInstagram class="text-green-800 hover:text-green-700 h-8" />
       </a>
-      <a href="https://facebook.com" target="_blank">
+      <a href="https://twitter.com" target="_blank">
         <IconTwitter class="text-green-800 hover:text-green-700 h-8" />
       </a>
     </div>

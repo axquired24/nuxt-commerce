@@ -1,5 +1,6 @@
 <template>
   <div class="py-5 px-20 w-full">
+    <!-- breadcrumbs -->
     <div class="py-4 text-sm flex items-center gap-2 text-green-600">
       <span>Home</span>
       <ChevronRightIcon />
@@ -7,6 +8,8 @@
       <ChevronRightIcon />
       <span>{{ product.name }}</span>
     </div>
+
+    <!-- Product Action -->
     <div class="grid grid-cols-4 gap-8">
       <div>
         <img class="w-full h-auto" :src="product.images[0]" :alt="product.name" />
@@ -27,7 +30,14 @@
               Deskripsi Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
             </div>
             <div v-show="activeTab.name == 'info'">
-              Info Penting Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+              Hari & Jam Operasional Toko : <br />
+              Senin - Jumat : 09.00 17.00 WIB <br />
+              ( Sabtu-Minggu & tanggal Merah tidak ada pengiriman )  <br />
+            </div>
+            <div v-show="activeTab.name == 'sizechart'">
+              Table ukuran produk toko : <br />
+              <img class="w-full p-4"
+                src="https://i.ibb.co/tXSVjmt/31ecbbaac42cb7f6e9142789c0593e3e.jpg" alt="Size Chart" />
             </div>
           </template>
         </MenuTab>
@@ -78,6 +88,34 @@
         </div>
       </div>
     </div>
+
+    <!-- Product Review -->
+    <div class="grid grid-cols-6 gap-10 pt-5 mt-5 border-t border-gray-200">
+      <div>
+        <div class="text-xl text-center font-semibold">Ulasan Pembeli</div>
+        <div class="flex gap-2 mt-5 justify-center items-center">
+          <StarIcon class="text-yellow-500 h-10" />
+          <span class="text-7xl text-gray-800">
+            {{ ratingAvg(product.rating) }}
+          </span>
+          <span class="text-gray-600 pb-1 self-end">
+            / 5.0
+          </span>
+        </div>
+        <div class="mt-5 flex justify-center text-sm text-gray-700">
+          <span>{{ product.sold - 10 }} rating</span>
+          <span class="mx-2">-</span>
+          <span>{{ product.sold - 15 }} ulasan</span>
+        </div>
+      </div>
+
+      <div class="col-span-4">
+        <div class="text-xl font-semibold">Ulasan Pilihan</div>
+        <template v-for="(review, reviewIdx) in reviews">
+          <CardReviewProduct class="my-6" :key="reviewIdx" :review="review" />
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -115,6 +153,40 @@ export default {
         {
           name: 'info',
           label: 'Info Penting'
+        },
+        {
+          name: 'sizechart',
+          label: 'Size Chart'
+        }
+      ],
+      reviews: [
+        {
+          name: 'Vivian',
+          avatar: 'https://i.pravatar.cc/150?img=47',
+          varian: 'Hijau',
+          comment: 'Bagus Kaosnya, Udah beli 4x disini selalu puas.',
+          dayAgo: '2 hari yang lalu'
+        },
+        {
+          name: 'Zaki Nurma',
+          avatar: 'https://i.pravatar.cc/150?img=48',
+          varian: 'Kuning',
+          comment: 'Order kelima, selalu bagus. Bakal order lagi sih ini.',
+          dayAgo: '4 hari yang lalu'
+        },
+        {
+          name: 'Fahrur Rohman',
+          avatar: 'https://i.pravatar.cc/150?img=49',
+          varian: 'Hijau',
+          comment: 'Seller ramah, pengiriman cepat, packaging aman banget.',
+          dayAgo: '3 hari yang lalu'
+        },
+        {
+          name: 'Adam Tampan',
+          avatar: 'https://i.pravatar.cc/150?img=32',
+          varian: 'Merah',
+          comment: 'Biar bintang yang berbicara.',
+          dayAgo: '4 hari yang lalu'
         }
       ]
     }
