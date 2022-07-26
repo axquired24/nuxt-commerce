@@ -23,9 +23,10 @@
           <CardProductItem :key="productIdx" :product="product" @afterClick="gotoDetail" />
         </template>
       </div>
-      <div class="my-10 flex justify-center">
+
+      <!-- <div class="my-10 flex justify-center">
         <button class="px-4 py-2 text-gray-600 border-2 border-gray-500 rounded-md cursor-pointer hover:bg-gray-100">Lihat Selebihnya</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -79,12 +80,8 @@ export default {
   },
   mounted() {
     const self = this
-    this.$nextTick(() => {
-      self.$nuxt.$loading.start()
-      self.fetchProducts().then(products => {
-        self.products = products
-        self.$nuxt.$loading.finish()
-      })
+    this.fetchProducts().then(products => {
+      self.products = products
     })
 
     // Generate Static Products
