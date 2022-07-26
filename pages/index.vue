@@ -5,7 +5,7 @@
 
     <div class="px-4 lg:px-0">
       <!-- Categories -->
-      <div class="flex gap-4 my-5 overflow-x-scroll">
+      <div class="flex gap-4 py-5 my-2 overflow-x-scroll">
         <template v-for="(cat, catIdx) in categories">
           <BtnShopCategory :label="cat" :key="catIdx" />
         </template>
@@ -18,7 +18,7 @@
         </div>
       </template>
       <!-- <div class="column-3 gap-6 mt-5"> -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-6 lg:mt-5">
+      <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 lg:gap-4 xl:gap-6 lg:mt-5">
         <template v-for="(product, productIdx) in products">
           <CardProductItem :key="productIdx" :product="product" @afterClick="gotoDetail" />
         </template>
@@ -70,7 +70,7 @@ export default {
     gotoDetail(product) {
       this.setSingleProduct(product)
       this.$router.push({
-        path: '/product/' + slug(product.name),
+        path: '/product/' + product.id + '/' + slug(product.name),
       })
       console.log({product})
     }

@@ -1,8 +1,8 @@
 <template>
   <div class="py-5 px-4 lg:px-20 w-full">
     <!-- breadcrumbs -->
-    <div class="py-4 text-sm flex items-center gap-2 text-green-600">
-      <span>Home</span>
+    <div class="py-4 text-sm flex flex-wrap items-center gap-2 text-green-600">
+      <NuxtLink to="/">Home</NuxtLink>
       <ChevronRightIcon />
       <span>Men Fashion</span>
       <ChevronRightIcon />
