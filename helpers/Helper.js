@@ -22,6 +22,10 @@ const Helper = {
     }
   },
 
+  sumArray(arr) {
+    return arr.reduce((a, b) => a + b, 0);
+  },
+
   generateProduct: ({
     nameParam=null,
     priceParam=60000,
@@ -33,11 +37,11 @@ const Helper = {
       'https://images.tokopedia.net/img/cache/100-square/product-1/2019/10/25/3453155/3453155_e3c9532f-5a2b-43e8-a452-b07f9066cb85_859_859.webp?ect=4g'
     ]
     const randomRating = {
-      1: Math.floor(Math.random() * 101),
-      2: Math.floor(Math.random() * 101),
-      3: Math.floor(Math.random() * 101),
-      4: Math.floor(Math.random() * 101),
-      5: Math.floor(Math.random() * 101)
+      1: Math.floor(Math.random() * 31),
+      2: Math.floor(Math.random() * 31),
+      3: Math.floor(Math.random() * 31),
+      4: Math.floor(Math.random() * 91) + 100,
+      5: Math.floor(Math.random() * 301) + 400
     }
     return {
       id: customNano(),
@@ -48,6 +52,20 @@ const Helper = {
       sold: Object.entries(randomRating).reduce((acc, [key, value]) => acc + value, 0)
     }
   },
+}
+
+Helper.ratingAvg = (rating) => {
+  const ratingCollection = Object.entries(rating)
+  let currentSum = ratingCollection.map(item => {
+    return parseInt(item[0]) * parseInt(item[1])
+  })
+  currentSum = Helper.sumArray(currentSum)
+  let personTotal = ratingCollection.map(item => {
+    return parseInt(item[1])
+  })
+  personTotal = Helper.sumArray(personTotal)
+
+  return (currentSum / personTotal).toFixed(1)
 }
 
 Helper.staticProducts = () => {

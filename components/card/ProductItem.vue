@@ -1,6 +1,6 @@
 <template>
 <div @click="$emit('afterClick', product)" class="w-full cursor-pointer no-break-inside p-2 mb-6 border-2 border-gray-100 rounded-md shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
-  <img class="w-full h-auto" :src="product.images[0]" :alt="product" />
+  <img class="w-full h-auto" :src="product.images[0]" :alt="product.name" />
   <div class="mt-2 text-sm">{{ product.name }}</div>
   <div class="font-semibold">{{ formatRupiah(product.price) }}</div>
   <div class="flex items-center text-sm text-gray-500">
@@ -25,12 +25,7 @@ export default {
       return Helper.formatRupiah(angka, prefix)
     },
     ratingAvg(rating) {
-      // @TODO(albert): logic rating
-      const rand = Math.random() * 5
-      if(rand < 3) {
-        return this.ratingAvg(rating)
-      }
-      return rand.toFixed(1)
+      return Helper.ratingAvg(rating)
     }
   }
 }

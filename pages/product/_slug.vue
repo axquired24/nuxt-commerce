@@ -8,7 +8,9 @@
       <span>{{ product.name }}</span>
     </div>
     <div class="grid grid-cols-4 gap-8">
-      <CardProductItem :product="product" />
+      <div>
+        <img class="w-full h-auto" :src="product.images[0]" :alt="product.name" />
+      </div>
 
       <div class="col-span-2">
         <div class="text-lg font-semibold">{{ product.name }}</div>
@@ -32,7 +34,7 @@
       </div>
 
       <div class="right-wrapper">
-        <div class="p-4 border border-gray-500 rounded-md">
+        <div class="p-4 border border-gray-300 rounded-md">
           <div class="font-semibold">Warna</div>
           <div class="my-2 flex items-center gap-3">
             <template v-for="va in variants">
@@ -125,12 +127,7 @@ export default {
         return Helper.formatRupiah(angka, prefix)
       },
       ratingAvg(rating) {
-        // @TODO(albert): logic rating
-        const rand = Math.random() * 5
-        if(rand < 3) {
-          return this.ratingAvg(rating)
-        }
-        return rand.toFixed(1)
+        return Helper.ratingAvg(rating)
       },
       setActiveVariant(variantName) {
         this.selectedVariant = variantName

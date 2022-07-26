@@ -55,7 +55,7 @@ export default {
     async fetchProducts() {
       let products = []
       try {
-        const response = await fetch('https://run.mocky.io/v3/a0629060-84ec-482f-830e-38531e822155')
+        const response = await fetch('https://run.mocky.io/v3/f576c02d-4ca2-43f6-a8e1-274f4489c8b7')
         products = await response.json()
       } catch (e) {
         console.error('Failed to fetch product list', e)
@@ -82,8 +82,10 @@ export default {
     })
 
     // Generate Static Products
+    // const staticProducts = Helper.staticProducts()
+    // this.products = staticProducts
     // console.log({
-    //   staticProducts: Helper.staticProducts()
+    //   staticProducts
     // })
   },
   name: 'IndexPage'
