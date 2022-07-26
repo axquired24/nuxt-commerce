@@ -1,5 +1,5 @@
 <template>
-  <div class="py-5 px-20 w-full">
+  <div class="py-5 px-4 lg:px-20 w-full">
     <!-- breadcrumbs -->
     <div class="py-4 text-sm flex items-center gap-2 text-green-600">
       <span>Home</span>
@@ -10,12 +10,12 @@
     </div>
 
     <!-- Product Action -->
-    <div class="grid grid-cols-4 gap-8">
-      <div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 order-1">
+      <div class="w-full">
         <img class="w-full h-auto" :src="product.images[0]" :alt="product.name" />
       </div>
 
-      <div class="col-span-2">
+      <div class="lg:col-span-2 lg:order-3 xl:order-2">
         <div class="text-lg font-semibold">{{ product.name }}</div>
         <div class="flex items-center text-sm text-gray-500">
           <span class="mr-2">Terjual {{ product.sold }}</span>
@@ -43,7 +43,7 @@
         </MenuTab>
       </div>
 
-      <div class="right-wrapper">
+      <div class="right-wrapper order-3 lg:order-2">
         <div class="p-4 border border-gray-300 rounded-md">
           <div class="font-semibold">Warna</div>
           <div class="my-2 flex items-center gap-3">
@@ -90,8 +90,8 @@
     </div>
 
     <!-- Product Review -->
-    <div class="grid grid-cols-6 gap-10 pt-5 mt-5 border-t border-gray-200">
-      <div>
+    <div class="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-6 gap-1 lg:gap-10 pt-5 mt-5 border-t border-gray-200">
+      <div class="border-b pb-4 mb-4 border-gray-100 lg:border-0">
         <div class="text-xl text-center font-semibold">Ulasan Pembeli</div>
         <div class="flex gap-2 mt-5 justify-center items-center">
           <StarIcon class="text-yellow-500 h-10" />
@@ -109,7 +109,7 @@
         </div>
       </div>
 
-      <div class="col-span-4">
+      <div class="lg:col-span-3 xl:col-span-4">
         <div class="text-xl font-semibold">Ulasan Pilihan</div>
         <template v-for="(review, reviewIdx) in reviews">
           <CardReviewProduct class="my-6" :key="reviewIdx" :review="review" />
