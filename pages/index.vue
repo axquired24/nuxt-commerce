@@ -1,10 +1,7 @@
 <template>
   <div class="py-5 px-32 w-full">
     <!-- Banner Section -->
-    <div class="flex justify-center">
-      <!-- <img class="rounded-md" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/7/21/ecee69cf-65bc-4a96-bd07-d20700544fd5.jpg.webp?ect=3g" alt="Promo"> -->
-      <img class="rounded-md" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/7/7/80507a63-2e1b-4bd2-b375-ad58a5842d3c.jpg.webp?ect=3g" alt="Promo">
-    </div>
+    <MainTopBanner />
 
     <!-- Categories -->
     <div class="flex gap-4 mt-5">
