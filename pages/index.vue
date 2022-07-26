@@ -14,6 +14,11 @@
     </div>
 
     <!-- Products -->
+    <template v-if="products.length < 1">
+      <div class="flex justify-center my-5">
+        <img src="/loading-green.gif" alt="Loading">
+      </div>
+    </template>
     <!-- <div class="column-3 gap-6 mt-5"> -->
     <div class="grid grid-cols-4 gap-6 mt-5">
       <template v-for="(product, productIdx) in products">
